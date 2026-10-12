@@ -143,7 +143,7 @@ function Index() {
 
       <footer className="border-t border-border py-8">
         <div className="mx-auto flex max-w-6xl justify-between px-6 font-mono text-xs text-muted-foreground">
-          <span>© {new Date().getFullYear()} Greptun</span>
+          <span>© {new Date().getFullYear()} Greptun s.r.o.</span>
           <span>Engineered with precision</span>
         </div>
       </footer>
