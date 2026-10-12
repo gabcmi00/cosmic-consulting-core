@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import hero from "@/assets/hero.jpg";
 import logo from "@/assets/greptun-logo.png.asset.json";
 import lisaArt from "@/assets/lisa-artwork.png.asset.json";
@@ -28,9 +29,16 @@ const services = [
 const steps = ["Define", "Model", "Validate", "Deliver"];
 
 function Index() {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
-      <header className="fixed inset-x-0 top-0 z-20 border-b border-border bg-background/70 backdrop-blur">
+      <header className={`fixed inset-x-0 top-0 z-20 border-b border-border bg-background/70 backdrop-blur transition-all duration-300 ${scrolled ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-full opacity-0"}`}>
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a href="#" className="flex items-center gap-3 text-lg font-semibold tracking-tight">
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-foreground p-1">
