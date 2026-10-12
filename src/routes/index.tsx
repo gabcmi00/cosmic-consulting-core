@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import hero from "@/assets/hero.jpg";
 import logo from "@/assets/greptun-logo.png.asset.json";
 import lisaArt from "@/assets/lisa-artwork.png.asset.json";
@@ -28,9 +29,16 @@ const services = [
 const steps = ["Define", "Model", "Validate", "Deliver"];
 
 function Index() {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
-      <header className="fixed inset-x-0 top-0 z-20 border-b border-border bg-background/70 backdrop-blur">
+      <header className={`fixed inset-x-0 top-0 z-20 border-b border-border bg-background/70 backdrop-blur transition-all duration-300 ${scrolled ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-full opacity-0"}`}>
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a href="#" className="flex items-center gap-3 text-lg font-semibold tracking-tight">
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-foreground p-1">
@@ -50,7 +58,7 @@ function Index() {
       <section className="relative flex min-h-screen items-center overflow-hidden">
         <img src={hero} alt="Orbital trajectories around a planet" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent" />
-        <span aria-hidden="true" className="pointer-events-none absolute right-6 top-24 select-none whitespace-nowrap font-display text-[12vw] font-bold leading-none tracking-tight text-foreground/[0.06]">
+        <span aria-hidden="true" className="pointer-events-none absolute left-6 top-24 select-none whitespace-nowrap font-[Manrope] text-[12vw] font-extrabold leading-none tracking-tight text-foreground/[0.15]">
           GREPTUN
         </span>
         <div className="relative mx-auto w-full max-w-6xl px-6">
