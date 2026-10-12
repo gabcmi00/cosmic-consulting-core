@@ -50,6 +50,9 @@ function Index() {
       <section className="relative flex min-h-screen items-center overflow-hidden">
         <img src={hero} alt="Orbital trajectories around a planet" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent" />
+        <span aria-hidden="true" className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 select-none whitespace-nowrap font-display text-[18vw] font-bold leading-none tracking-tight text-foreground/[0.06]">
+          GREPTUN
+        </span>
         <div className="relative mx-auto w-full max-w-6xl px-6">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">// CONSULTING FOR YOUR SPACE MISSION</p>
           <h1 className="mt-6 max-w-3xl text-5xl font-light leading-[1.05] tracking-tight md:text-7xl">
