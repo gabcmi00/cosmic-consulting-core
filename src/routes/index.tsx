@@ -123,8 +123,8 @@ function Index() {
       <section id="contact" className="grid-bg border-t border-border py-28">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h2 className="mx-auto max-w-2xl text-4xl font-light tracking-tight md:text-5xl">Have a problem worth solving?</h2>
-          <a href="mailto:hello@greptun.com" className="mt-10 inline-block font-mono text-xl text-primary underline-offset-8 hover:underline">
-            hello@greptun.com
+          <a href="mailto:greptun@greptun.com" className="mt-10 inline-block font-mono text-xl text-primary underline-offset-8 hover:underline">
+            greptun@greptun.com
           </a>
         </div>
       </section>
