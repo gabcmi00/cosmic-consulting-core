@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import hero from "@/assets/hero.jpg";
+import logo from "@/assets/greptun-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,8 +30,11 @@ function Index() {
     <div className="min-h-screen bg-background font-sans text-foreground">
       <header className="fixed inset-x-0 top-0 z-20 border-b border-border bg-background/70 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#" className="flex items-center gap-2 text-lg font-semibold tracking-tight">
-            <span className="h-2.5 w-2.5 rounded-full bg-primary" /> Greptun
+          <a href="#" className="flex items-center gap-3 text-lg font-semibold tracking-tight">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-foreground p-1">
+              <img src={logo.url} alt="Greptun logo" className="h-full w-full object-contain" />
+            </span>
+            Greptun
           </a>
           <nav className="hidden gap-8 font-mono text-xs uppercase tracking-widest text-muted-foreground md:flex">
             <a href="#services" className="hover:text-foreground">Services</a>
