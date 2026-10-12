@@ -56,7 +56,7 @@ function Index() {
             When the details <span className="text-primary">matter</span>.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-            We bring space-grade engineering rigor and the scientific method to your hardest problems.
+            We provide Product Assurance and engineering support for the space industry - from concept to delivery.
           </p>
           <a href="#contact" className="mt-10 inline-flex items-center gap-3 rounded-sm bg-primary px-6 py-3 font-medium text-primary-foreground transition hover:opacity-90">
             Start a conversation →
