@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import hero from "@/assets/hero.jpg";
 import logo from "@/assets/greptun-logo.png.asset.json";
+import lisaArt from "@/assets/lisa-artwork.png.asset.json";
+import lisaLogo from "@/assets/lisa-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,6 +40,7 @@ function Index() {
           </a>
           <nav className="hidden gap-8 font-mono text-xs uppercase tracking-widest text-muted-foreground md:flex">
             <a href="#services" className="hover:text-foreground">Services</a>
+            <a href="#projects" className="hover:text-foreground">Projects</a>
             <a href="#approach" className="hover:text-foreground">Approach</a>
             <a href="#contact" className="hover:text-foreground">Contact</a>
           </nav>
@@ -76,6 +79,31 @@ function Index() {
           </div>
         </div>
       </section>
+
+      <section id="projects" className="border-t border-border py-28">
+        <div className="mx-auto max-w-6xl px-6">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">References</p>
+          <h2 className="mt-4 text-4xl font-light tracking-tight">Current projects</h2>
+          <article className="mt-14 overflow-hidden border border-border bg-card">
+            <div className="relative">
+              <img src={lisaArt.url} alt="Artistic visualisation of the LISA mission detecting gravitational waves" className="aspect-[16/7] w-full object-cover" loading="lazy" />
+              <img src={lisaLogo.url} alt="ESA LISA mission logo" className="absolute bottom-4 right-4 h-20 w-20 object-contain md:h-28 md:w-28" loading="lazy" />
+            </div>
+            <div className="grid gap-10 p-10 md:grid-cols-[1fr_2fr]">
+              <div>
+                <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">HPS Romania · ESA / OHB</span>
+                <h3 className="mt-3 text-2xl font-medium">LISA Spacecraft – Radiator Panels</h3>
+              </div>
+              <div className="space-y-4 text-muted-foreground">
+                <p>We provide Product Assurance and engineering support to HPS Romania, an ESA/OHB supplier, for the LISA spacecraft radiator panels. Our involvement began in the initial project phases and currently focuses on material and process qualification, technical documentation, and consultancy on manufacturing and testing approaches. We will continue supporting the project through to final hardware delivery.</p>
+                <p>ESA’s Laser Interferometer Space Antenna (LISA) will be the first space-based observatory dedicated to detecting gravitational waves — ripples in spacetime produced by some of the most powerful events in the Universe, including merging black holes.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+
 
       <section id="approach" className="border-t border-border py-28">
         <div className="mx-auto max-w-6xl px-6">
