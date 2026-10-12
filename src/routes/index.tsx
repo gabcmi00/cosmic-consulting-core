@@ -50,7 +50,7 @@ function Index() {
         <div className="relative mx-auto w-full max-w-6xl px-6">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">// Consulting · Engineering · Science</p>
           <h1 className="mt-6 max-w-3xl text-5xl font-light leading-[1.05] tracking-tight md:text-7xl">
-            Precision thinking for <span className="text-primary">complex</span> missions.
+            When the details <span className="text-primary">matter</span>.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
             We bring space-grade engineering rigor and the scientific method to your hardest problems.
