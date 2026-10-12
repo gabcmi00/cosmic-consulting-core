@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
 const services = [
   { n: "01", t: "Product Assurance Management", d: "We provide Project and Product Assurance Management, including the preparation of tailored Product Assurance Plans in accordance with ECSS-Q-ST-10C and the adaptation of ECSS standards to project-specific needs. We ensure compliance with customer PA requirements, their flow-down to suppliers and subcontractors, and represent the client in all Product and Quality Assurance matters." },
   { n: "02", t: "Materials & Processes", d: "We manage the Materials and Processes programme in accordance with ECSS-Q-ST-70C, supporting design engineers in selecting space-proven materials and processes and assessing their qualification status. Our services include coordinating ESA approval for new qualifications, identifying technical risks and cost drivers, maintaining Declared Materials, Mechanical Parts and Processes lists, and representing the client at customer reviews." },
-  { n: "03", t: "Technology Strategy", d: "Roadmaps, feasibility studies and due diligence for deep-tech ventures." },
+  { n: "03", t: "Quality Assurance", d: "We provide Quality Assurance services in accordance with ECSS-Q-ST-20C and ISO 9001, ensuring that quality requirements are properly implemented throughout the project lifecycle. Our activities include quality planning, process monitoring, audits, non-conformity management and continuous improvement, helping ensure compliance with customer requirements and applicable standards." },
   { n: "04", t: "Mission Assurance", d: "Risk, reliability and quality reviews to make sure it works the first time." },
 ];
 
