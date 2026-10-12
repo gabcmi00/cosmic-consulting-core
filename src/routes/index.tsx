@@ -91,6 +91,7 @@ function Index() {
             <div className="relative">
               <img src={lisaArt.url} alt="Artistic visualisation of the LISA mission detecting gravitational waves" className="aspect-[16/7] w-full object-cover" loading="lazy" />
               <img src={lisaLogo.url} alt="ESA LISA mission logo" className="absolute bottom-4 right-4 h-20 w-20 object-contain md:h-28 md:w-28" loading="lazy" />
+              <span className="absolute bottom-3 left-4 rounded-sm bg-background/60 px-2 py-1 font-mono text-[10px] text-muted-foreground">Source: European Space Agency (ESA)</span>
             </div>
             <div className="grid gap-10 p-10 md:grid-cols-[1fr_2fr]">
               <div>
