@@ -51,7 +51,7 @@ function Index() {
         <img src={hero} alt="Orbital trajectories around a planet" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent" />
         <div className="relative mx-auto w-full max-w-6xl px-6">
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">// CONSULTING · ENGINEERING</p>
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">// CONSULTING FOR YOUR SPACE MISSION</p>
           <h1 className="mt-6 max-w-3xl text-5xl font-light leading-[1.05] tracking-tight md:text-7xl">
             When the details <span className="text-primary">matter</span>.
           </h1>
