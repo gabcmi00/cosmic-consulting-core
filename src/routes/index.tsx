@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { n: "01", t: "Systems Engineering", d: "Architecture, requirements and verification for complex, mission-critical systems." },
+  { n: "01", t: "Product Assurance Management", d: "We provide Project and Product Assurance Management, including the preparation of tailored Product Assurance Plans in accordance with ECSS-Q-ST-10C and the adaptation of ECSS standards to project-specific needs. We ensure compliance with customer PA requirements, their flow-down to suppliers and subcontractors, and represent the client in all Product and Quality Assurance matters." },
   { n: "02", t: "Scientific Analysis", d: "Modelling, simulation and data analysis that turn uncertainty into decisions." },
   { n: "03", t: "Technology Strategy", d: "Roadmaps, feasibility studies and due diligence for deep-tech ventures." },
   { n: "04", t: "Mission Assurance", d: "Risk, reliability and quality reviews to make sure it works the first time." },
