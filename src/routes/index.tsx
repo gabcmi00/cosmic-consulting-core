@@ -62,7 +62,7 @@ function Index() {
           GREPTUN
         </span>
         <div className="relative mx-auto w-full max-w-6xl px-6">
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">// CONSULTING FOR YOUR SPACE MISSION</p>
+          <p className="whitespace-nowrap font-mono text-[clamp(8px,2.7vw,12px)] uppercase tracking-[0.15em] text-primary sm:text-xs sm:tracking-[0.3em]">// CONSULTING FOR YOUR SPACE MISSION</p>
           <h1 className="mt-6 max-w-3xl text-5xl font-light leading-[1.05] tracking-tight md:text-7xl">
             When the details <span className="text-primary">matter</span>.
           </h1>
@@ -150,9 +150,9 @@ function Index() {
       </section>
 
       <footer className="border-t border-border py-8">
-        <div className="mx-auto flex max-w-6xl justify-between px-6 font-mono text-xs text-muted-foreground">
-          <span>© {new Date().getFullYear()} Greptun s.r.o.</span>
-          <span>Engineered with precision</span>
+        <div className="mx-auto flex max-w-6xl justify-between gap-4 px-6 font-mono text-[clamp(8px,2.6vw,12px)] text-muted-foreground sm:text-xs">
+          <span className="whitespace-nowrap">© {new Date().getFullYear()} Greptun s.r.o.</span>
+          <span className="whitespace-nowrap">Engineered with precision</span>
         </div>
       </footer>
     </div>
