@@ -1,7 +1,7 @@
 # Cosmic Consulting Core
 
-Build a website for my company Greptun. My company offers consulting services. The theme should be minimalist, modern, space engineering, science. 
-The company logo is in these colors: Deep navy#081522
+The company logo is in these colors: 
+Deep navy#081522
 
 Grapefruit#FF6248
 
