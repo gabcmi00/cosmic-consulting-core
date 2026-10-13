@@ -120,7 +120,7 @@ function Index() {
       <section id="approach" className="border-t border-border py-28">
         <div className="mx-auto max-w-6xl px-6">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">Approach</p>
-          <h2 className="mt-4 max-w-2xl text-4xl font-light tracking-tight">From first principles to flight-ready results.</h2>
+          <h2 className="mt-4 max-w-2xl text-4xl font-light tracking-tight">From project requirements to controlled delivery.</h2>
           <ol className="mt-16 grid gap-10 md:grid-cols-4">
             {steps.map((s, i) => (
               <li key={s} className="border-t border-primary pt-6">
