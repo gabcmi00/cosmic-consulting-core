@@ -26,7 +26,12 @@ const services = [
   { n: "04", t: "Documentation Management", d: "We support technical documentation and configuration management to ensure that product information, project records and configuration changes remain accurate, traceable and controlled throughout the project lifecycle, in accordance with applicable project and ECSS requirements." },
 ];
 
-const steps = ["Define", "Model", "Validate", "Deliver"];
+const steps = [
+  { title: "Understand", description: "Short description goes here." },
+  { title: "Plan", description: "Short description goes here." },
+  { title: "Verify", description: "Short description goes here." },
+  { title: "Deliver", description: "Short description goes here." },
+];
 
 function Index() {
   const [scrolled, setScrolled] = useState(false);
@@ -123,9 +128,9 @@ function Index() {
           <h2 className="mt-4 max-w-2xl text-4xl font-light tracking-tight">From project requirements to controlled delivery.</h2>
           <ol className="mt-16 grid gap-10 md:grid-cols-4">
             {steps.map((s, i) => (
-              <li key={s} className="border-t border-primary pt-6">
-                <span className="font-mono text-xs text-muted-foreground">T+{String(i).padStart(2, "0")}</span>
-                <p className="mt-2 text-xl">{s}</p>
+              <li key={s.title} className="border-t border-primary pt-6">
+                <p className="text-xl">{i + 1}. {s.title}</p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.description}</p>
               </li>
             ))}
           </ol>
