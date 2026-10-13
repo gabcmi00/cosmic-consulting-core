@@ -27,10 +27,10 @@ const services = [
 ];
 
 const steps = [
-  { title: "Understand", description: "Short description goes here." },
-  { title: "Plan", description: "Short description goes here." },
-  { title: "Verify", description: "Short description goes here." },
-  { title: "Deliver", description: "Short description goes here." },
+  { title: "Understand", description: "Understand project objectives, applicable requirements, customer expectations, and scope." },
+  { title: "Plan", description: "Define activities, responsibilities, documentation, qualification needs, and compliance evidence." },
+  { title: "Verify", description: "Monitor implementation, assess compliance, address technical risks, and coordinate verification activities." },
+  { title: "Deliver", description: "Maintain traceable records, resolve outstanding issues, and support the required project reviews and handover." },
 ];
 
 function Index() {
@@ -148,7 +148,7 @@ function Index() {
             <p className="text-sm text-foreground">Greptun s.r.o.</p>
             <p>Vápenická ulica 736/20, 971 01 Prievidza</p>
             <p>IČO 57829390 · DIČ 2123204105</p>
-            <p>IČ DPH SK2123204105, according §7a of Act No. 222/2004 Coll. on Value Added Tax, registered od 7.9.2026</p>
+            <p>IČ DPH SK2123204105, according §7a of Act No. 222/2004 Coll. on Value Added Tax</p>
             <p>Registered in Commercial Register of the District Court of Trenčín, Section: Sro, Entry No. 58715/R</p>
           </address>
         </div>
