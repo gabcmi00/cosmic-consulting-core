@@ -12,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
@@ -32,11 +32,24 @@ jobs:
       - name: Build site
         run: bun run build
 
-      - name: Verify build output
+      - name: Inspect generated asset paths
+        run: |
+          echo "=== Generated files ==="
+          find .output/public -maxdepth 4 -type f | sort
+
+          echo "=== Hero image references ==="
+          grep -R -n "hero-DbcUb8pm.jpg" .output/public || true
+
+          echo "=== HTML asset references ==="
+          grep -oE '(src|href)="[^"]+"' .output/public/index.html | head -60 || true
+
+          echo "=== CSS asset URLs ==="
+          grep -R -nE 'url\([^)]*\)' .output/public/assets --include='*.css' | head -60 || true
+
+      - name: Verify static output
         run: |
           test -f .output/public/index.html
-          echo "Static output files:"
-          find .output/public -maxdepth 3 -type f | sort
+          test -d .output/public/assets
 
       - name: Add 404 page
         run: cp .output/public/index.html .output/public/404.html
@@ -44,17 +57,18 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: .output/public
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
 
     steps:
       - name: Deploy to GitHub Pages
