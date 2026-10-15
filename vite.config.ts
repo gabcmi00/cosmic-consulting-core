@@ -5,14 +5,15 @@
 //     React/TanStack dedupe, error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 
- // @lovable.dev/vite-tanstack-config already includes the required plugins.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  base: "/cosmic-consulting-core/",
+  vite: {
+    // GitHub Pages serves this project from a repository subpath, not the domain root.
+    base: "/cosmic-consulting-core/",
+  },
   tanstackStart: {
     server: { entry: "server" },
     prerender: { enabled: true, crawlLinks: true },
   },
 });
-
