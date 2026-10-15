@@ -46,6 +46,26 @@ jobs:
           echo "=== CSS asset URLs ==="
           grep -R -nE 'url\([^)]*\)' .output/public/assets --include='*.css' | head -60 || true
 
+      - name: Normalize asset URLs for GitHub Pages
+        run: |
+          # This site is hosted from /cosmic-consulting-core/, not the domain root.
+          # Rewrite root-relative generated asset URLs so CSS, JS, and public files resolve.
+          python3 - <<'PY'
+          from pathlib import Path
+          root = Path(".output/public")
+          for path in root.rglob("*"):
+              if path.is_file() and path.suffix in {".html", ".js", ".css"}:
+                  text = path.read_text(encoding="utf-8")
+                  text = text.replace('"/assets/', '"/cosmic-consulting-core/assets/')
+                  text = text.replace("'/assets/", "'/cosmic-consulting-core/assets/")
+                  text = text.replace('url(/assets/', 'url(/cosmic-consulting-core/assets/')
+                  text = text.replace('"/favicon.png"', '"/cosmic-consulting-core/favicon.png"')
+                  text = text.replace("'/favicon.png'", "'/cosmic-consulting-core/favicon.png'")
+                  text = text.replace('"/__l5e/assets-v1/', '"/cosmic-consulting-core/__l5e/assets-v1/')
+                  text = text.replace("'/__l5e/assets-v1/", "'/cosmic-consulting-core/__l5e/assets-v1/")
+                  path.write_text(text, encoding="utf-8")
+          PY
+
       - name: Verify static output
         run: |
           test -f .output/public/index.html
