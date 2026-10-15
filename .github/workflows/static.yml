@@ -56,15 +56,15 @@ jobs:
           from pathlib import Path
           root = Path(".output/public")
           replacements = {
-              "/__l5e/assets-v1/2df16a3e-f820-468f-8c5a-9253588cf275/greptun-logo.png": "/cosmic-consulting-core/greptun-logo.png",
-              "/__l5e/assets-v1/726ab1ba-08d7-49f7-a4fd-ed6d559784d2/lisa-artwork.png": "/cosmic-consulting-core/lisa-artwork.png",
+              "/__l5e/assets-v1/2df16a3e-f820-468f-8c5a-9253588cf275/greptun-logo.png": "/greptun-logo.png",
+              "/__l5e/assets-v1/726ab1ba-08d7-49f7-a4fd-ed6d559784d2/lisa-artwork.png": "/lisa-artwork.png",
           }
           # Read the asset metadata to locate the LISA logo's generated URL.
           metadata = Path("src/assets/lisa-logo.png.asset.json")
           if metadata.exists():
               import json
               url = json.loads(metadata.read_text())["url"]
-              replacements[url] = "/cosmic-consulting-core/lisa-logo.png"
+              replacements[url] = "/lisa-logo.png"
           for path in root.rglob("*"):
               if path.is_file() and path.suffix in {".html", ".js", ".css"}:
                   text = path.read_text(encoding="utf-8")
@@ -75,7 +75,7 @@ jobs:
 
       - name: Normalize asset URLs for GitHub Pages
         run: |
-          # This site is hosted from /cosmic-consulting-core/, not the domain root.
+          # This site is hosted from /, not the domain root.
           # Rewrite root-relative generated asset URLs so CSS, JS, and public files resolve.
           python3 - <<'PY'
           from pathlib import Path
@@ -83,13 +83,13 @@ jobs:
           for path in root.rglob("*"):
               if path.is_file() and path.suffix in {".html", ".js", ".css"}:
                   text = path.read_text(encoding="utf-8")
-                  text = text.replace('"/assets/', '"/cosmic-consulting-core/assets/')
-                  text = text.replace("'/assets/", "'/cosmic-consulting-core/assets/")
-                  text = text.replace('url(/assets/', 'url(/cosmic-consulting-core/assets/')
-                  text = text.replace('"/favicon.png"', '"/cosmic-consulting-core/favicon.png"')
-                  text = text.replace("'/favicon.png'", "'/cosmic-consulting-core/favicon.png'")
-                  text = text.replace('"/__l5e/assets-v1/', '"/cosmic-consulting-core/__l5e/assets-v1/')
-                  text = text.replace("'/__l5e/assets-v1/", "'/cosmic-consulting-core/__l5e/assets-v1/")
+                  text = text.replace('"/assets/', '"/assets/')
+                  text = text.replace("'/assets/", "'/assets/")
+                  text = text.replace('url(/assets/', 'url(/assets/')
+                  text = text.replace('"/favicon.png"', '"/favicon.png"')
+                  text = text.replace("'/favicon.png'", "'/favicon.png'")
+                  text = text.replace('"/__l5e/assets-v1/', '"/__l5e/assets-v1/')
+                  text = text.replace("'/__l5e/assets-v1/", "'/__l5e/assets-v1/")
                   path.write_text(text, encoding="utf-8")
           PY
 
