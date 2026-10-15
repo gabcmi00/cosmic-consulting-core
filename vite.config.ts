@@ -9,8 +9,8 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   vite: {
-    // GitHub Pages serves this project from a repository subpath, not the domain root.
-    base: "/cosmic-consulting-core/",
+    // The custom domain serves the site from its root.
+    base: "/",
   },
   tanstackStart: {
     server: { entry: "server" },
