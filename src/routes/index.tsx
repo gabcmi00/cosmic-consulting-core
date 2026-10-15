@@ -1,9 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import hero from "@/assets/hero.jpg";
-import logo from "@/assets/greptun-logo.png";
-import lisaArt from "@/assets/lisa-artwork.png";
-import lisaLogo from "@/assets/lisa-logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -47,7 +44,7 @@ function Index() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a href="#" className="flex items-center gap-3 text-lg font-semibold tracking-tight">
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-foreground p-1">
-              <img src={logo.url} alt="Greptun logo" className="h-full w-full object-contain" />
+              <img src="/cosmic-consulting-core/greptun-logo.png" alt="Greptun logo" className="h-full w-full object-contain" />
             </span>
             Greptun
           </a>
@@ -102,8 +99,8 @@ function Index() {
           <h2 className="mt-4 text-4xl font-light tracking-tight">Current projects</h2>
           <article className="mt-14 overflow-hidden border border-border bg-card">
             <div className="relative">
-              <img src={lisaArt.url} alt="Artistic visualisation of the LISA mission detecting gravitational waves" className="aspect-[16/7] w-full object-cover" loading="lazy" />
-              <img src={lisaLogo.url} alt="ESA LISA mission logo" className="absolute bottom-4 right-4 h-20 w-20 object-contain md:h-28 md:w-28" loading="lazy" />
+              <img src="/cosmic-consulting-core/lisa-artwork.png" alt="Artistic visualisation of the LISA mission detecting gravitational waves" className="aspect-[16/7] w-full object-cover" loading="lazy" />
+              <img src="/cosmic-consulting-core/lisa-logo.png" alt="ESA LISA mission logo" className="absolute bottom-4 right-4 h-20 w-20 object-contain md:h-28 md:w-28" loading="lazy" />
               <span className="absolute bottom-3 left-4 rounded-sm bg-background/60 px-2 py-1 font-mono text-[10px] text-muted-foreground">Source: European Space Agency (ESA)</span>
             </div>
             <div className="grid gap-10 p-10 md:grid-cols-[1fr_2fr]">
