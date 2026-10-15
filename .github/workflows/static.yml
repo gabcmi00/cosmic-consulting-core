@@ -1,5 +1,4 @@
-# Builds the site into static pages and deploys them to GitHub Pages
-name: Deploy to GitHub Pages
+name: Diagnose TanStack Build
 
 on:
   push:
@@ -8,36 +7,37 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
+
       - name: Install dependencies
         run: bun install
-      - name: Build static site
+
+      - name: Build site
         run: bun run build
-      - name: Add 404 page
-        run: cp dist/client/index.html dist/client/404.html
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist/client
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+
+      - name: Inspect build output
+        run: |
+          echo "=== Root files ==="
+          ls -la
+          echo "=== dist files ==="
+          if [ -d dist ]; then
+            find dist -maxdepth 4 -type f | sort
+          else
+            echo "No dist directory"
+          fi
+          echo "=== .output files ==="
+          if [ -d .output ]; then
+            find .output -maxdepth 3 -type f | sort
+          else
+            echo "No .output directory"
+          fi
