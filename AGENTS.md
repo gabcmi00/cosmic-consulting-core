@@ -8,3 +8,4 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+- Static hosting: vite.config prerenders all routes; GitHub Pages workflow deploys dist/client. Why: site must be hostable as plain files.
