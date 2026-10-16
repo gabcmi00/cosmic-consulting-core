@@ -5,10 +5,10 @@ import hero from "@/assets/hero.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Greptun — Engineering & Science Consulting" },
-      { name: "description", content: "Greptun is a consulting firm bringing space-grade engineering rigor and scientific thinking to complex problems." },
-      { property: "og:title", content: "Greptun — Engineering & Science Consulting" },
-      { property: "og:description", content: "Space-grade engineering rigor and scientific thinking for complex problems." },
+      { title: "Greptun — Product Assurance for Space Missions" },
+      { name: "description", content: "We provide Product Assurance and engineering support for the space industry, from concept to delivery." },
+      { property: "og:title", content: "Greptun — Product Assurance for Space Missions" },
+      { property: "og:description", content: "We provide Product Assurance and engineering support for the space industry, from concept to delivery." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
