@@ -85,6 +85,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       {
+        rel: "canonical",
+        href: "https://greptun.com/",
+      },
+      {
         rel: "stylesheet",
         href: appCss,
       },
