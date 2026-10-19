@@ -143,7 +143,7 @@ function Index() {
           </a>
           <address className="mx-auto mt-16 max-w-2xl space-y-1 border-t border-border pt-10 font-mono text-xs not-italic leading-relaxed text-muted-foreground">
             <p className="text-sm text-foreground">Greptun s.r.o.</p>
-            <p>Vápenická ulica 736/20, 971 01 Prievidza</p>
+            <p>Vápenická ulica 736/20, 971 01 Prievidza, Slovakia</p>
             <p>IČO 57829390 · DIČ 2123204105</p>
             <p>IČ DPH SK2123204105, according §7a of Act No. 222/2004 Coll. on Value Added Tax</p>
             <p>Registered in Commercial Register of the District Court of Trenčín, Section: Sro, Entry No. 58715/R</p>
