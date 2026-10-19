@@ -1,4 +1,3 @@
-
 name: Deploy to GitHub Pages
 
 on:
@@ -83,20 +82,29 @@ jobs:
           for path in root.rglob("*"):
               if path.is_file() and path.suffix in {".html", ".js", ".css"}:
                   text = path.read_text(encoding="utf-8")
-                  text = text.replace('"/assets/', '"/assets/')
-                  text = text.replace("'/assets/", "'/assets/")
+                  text = text.replace('\"/assets/', '\"/assets/')
+                  text = text.replace("' /assets/", "'/assets/")
                   text = text.replace('url(/assets/', 'url(/assets/')
-                  text = text.replace('"/favicon.png"', '"/favicon.png"')
+                  text = text.replace('\"/favicon.png\"', '\"/favicon.png\"')
                   text = text.replace("'/favicon.png'", "'/favicon.png'")
-                  text = text.replace('"/__l5e/assets-v1/', '"/__l5e/assets-v1/')
+                  text = text.replace('\"/__l5e/assets-v1/', '\"/__l5e/assets-v1/')
                   text = text.replace("'/__l5e/assets-v1/", "'/__l5e/assets-v1/")
                   path.write_text(text, encoding="utf-8")
           PY
+
+      - name: Publish search engine files
+        run: |
+          cp public/robots.txt .output/public/robots.txt
+          cp public/sitemap.xml .output/public/sitemap.xml
 
       - name: Verify static output
         run: |
           test -f .output/public/index.html
           test -d .output/public/assets
+          test -f .output/public/robots.txt
+          test -f .output/public/sitemap.xml
+          grep -q 'https://greptun.com/' .output/public/index.html
+          grep -q 'https://greptun.com/sitemap.xml' .output/public/robots.txt
 
       - name: Add 404 page
         run: cp .output/public/index.html .output/public/404.html
