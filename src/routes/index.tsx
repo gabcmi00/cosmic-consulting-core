@@ -126,7 +126,7 @@ function Index() {
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">Experience</p>
           <h2 className="mt-4 text-4xl font-light tracking-tight">Background and experience</h2>
           <div className="mt-14 grid items-start gap-10 lg:grid-cols-[2fr_3fr] lg:gap-16">
-            <img src={michalPhoto.url} alt="Michal Gabco in a cleanroom beside a spacecraft assembly" width={768} height={768} className="aspect-square w-full object-cover" loading="lazy" />
+            <img src={michalPhoto.url} alt="Michal Gabco in a cleanroom beside a spacecraft assembly" width={768} height={768} className="aspect-square w-full rounded-full object-cover" loading="lazy" />
             <div className="space-y-6 leading-relaxed text-muted-foreground">
               <p>Greptun was founded by Michal Gabco, a space industry engineer with experience in Product Assurance, Materials &amp; Processes, and AIT. Before starting Greptun, Michal worked at S.A.B. Aerospace, INVENT, and OHB System.</p>
               <p>His work has covered different stages of space hardware development, from material and process qualification to integration, testing, and Product Assurance for spacecraft and instruments. He has contributed to projects including LISA, HERA, CO2M, Comet Interceptor, and SPARROW, working with project teams on different types of hardware and technical requirements.</p>
