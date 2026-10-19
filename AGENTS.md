@@ -9,3 +9,4 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 - Static hosting: vite.config prerenders all routes; GitHub Pages workflow deploys dist/client. Why: site must be hostable as plain files.
+- Company experience stays in the single-page index with an anchor target and a CDN photo pointer. Why: preserve the static site's existing navigation and asset conventions.
