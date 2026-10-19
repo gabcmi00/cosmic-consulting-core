@@ -45,25 +45,34 @@ jobs:
           echo "=== CSS asset URLs ==="
           grep -R -nE 'url\([^)]*\)' .output/public/assets --include='*.css' | head -60 || true
 
-      - name: Publish Lovable image assets as static files
+      - name: Publish local image assets as static files
         run: |
           mkdir -p .output/public
           cp src/assets/greptun-logo.png .output/public/greptun-logo.png
           cp src/assets/lisa-artwork.png .output/public/lisa-artwork.png
           cp src/assets/lisa-logo.png .output/public/lisa-logo.png
+          cp src/assets/michal-gabco-cleanroom.png .output/public/michal-gabco-cleanroom.png
           python3 - <<'PY'
           from pathlib import Path
+          import json
+
           root = Path(".output/public")
           replacements = {
               "/__l5e/assets-v1/2df16a3e-f820-468f-8c5a-9253588cf275/greptun-logo.png": "/greptun-logo.png",
               "/__l5e/assets-v1/726ab1ba-08d7-49f7-a4fd-ed6d559784d2/lisa-artwork.png": "/lisa-artwork.png",
+              "/__l5e/assets-v1/4a98e90d-562b-42a5-a9eb-f54265422b9c/michal-gabco-cleanroom.png": "/michal-gabco-cleanroom.png",
           }
-          # Read the asset metadata to locate the LISA logo's generated URL.
-          metadata = Path("src/assets/lisa-logo.png.asset.json")
-          if metadata.exists():
-              import json
-              url = json.loads(metadata.read_text())["url"]
-              replacements[url] = "/lisa-logo.png"
+
+          # Read asset metadata so logo URLs remain correct if asset IDs change.
+          for filename, target in [
+              ("lisa-logo.png.asset.json", "/lisa-logo.png"),
+              ("michal-gabco-cleanroom.png.asset.json", "/michal-gabco-cleanroom.png"),
+          ]:
+              metadata = Path("src/assets") / filename
+              if metadata.exists():
+                  url = json.loads(metadata.read_text())["url"]
+                  replacements[url] = target
+
           for path in root.rglob("*"):
               if path.is_file() and path.suffix in {".html", ".js", ".css"}:
                   text = path.read_text(encoding="utf-8")
@@ -93,10 +102,15 @@ jobs:
         run: |
           test -f .output/public/index.html
           test -d .output/public/assets
+          test -f .output/public/greptun-logo.png
+          test -f .output/public/lisa-artwork.png
+          test -f .output/public/lisa-logo.png
+          test -f .output/public/michal-gabco-cleanroom.png
           test -f .output/public/robots.txt
           test -f .output/public/sitemap.xml
           grep -q 'https://greptun.com/' .output/public/index.html
           grep -q 'https://greptun.com/sitemap.xml' .output/public/robots.txt
+          grep -R -q 'michal-gabco-cleanroom.png' .output/public --include='*.html' --include='*.js'
 
       - name: Add 404 page
         run: cp .output/public/index.html .output/public/404.html
