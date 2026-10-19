@@ -74,21 +74,13 @@ jobs:
 
       - name: Normalize asset URLs for GitHub Pages
         run: |
-          # This site is hosted from /, not the domain root.
-          # Rewrite root-relative generated asset URLs so CSS, JS, and public files resolve.
+          # The custom domain serves the site from the domain root.
           python3 - <<'PY'
           from pathlib import Path
           root = Path(".output/public")
           for path in root.rglob("*"):
               if path.is_file() and path.suffix in {".html", ".js", ".css"}:
                   text = path.read_text(encoding="utf-8")
-                  text = text.replace('\"/assets/', '\"/assets/')
-                  text = text.replace("' /assets/", "'/assets/")
-                  text = text.replace('url(/assets/', 'url(/assets/')
-                  text = text.replace('\"/favicon.png\"', '\"/favicon.png\"')
-                  text = text.replace("'/favicon.png'", "'/favicon.png'")
-                  text = text.replace('\"/__l5e/assets-v1/', '\"/__l5e/assets-v1/')
-                  text = text.replace("'/__l5e/assets-v1/", "'/__l5e/assets-v1/")
                   path.write_text(text, encoding="utf-8")
           PY
 
