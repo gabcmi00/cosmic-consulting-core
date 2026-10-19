@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import hero from "@/assets/hero.jpg";
+import michalPhoto from "@/assets/michal-gabco-cleanroom.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -51,6 +52,7 @@ function Index() {
           <nav className="hidden gap-8 font-mono text-xs uppercase tracking-widest text-muted-foreground md:flex">
             <a href="#services" className="hover:text-foreground">Services</a>
             <a href="#projects" className="hover:text-foreground">Projects</a>
+            <a href="#experience" className="hover:text-foreground">Experience</a>
             <a href="#approach" className="hover:text-foreground">Approach</a>
             <a href="#contact" className="hover:text-foreground">Contact</a>
           </nav>
@@ -118,6 +120,22 @@ function Index() {
       </section>
 
 
+
+      <section id="experience" className="border-t border-border py-28">
+        <div className="mx-auto max-w-6xl px-6">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">Experience</p>
+          <h2 className="mt-4 text-4xl font-light tracking-tight">Background and experience</h2>
+          <div className="mt-14 grid items-start gap-10 lg:grid-cols-[2fr_3fr] lg:gap-16">
+            <img src={michalPhoto.url} alt="Michal Gabco in a cleanroom beside a spacecraft assembly" width={768} height={768} className="aspect-square w-full object-cover" loading="lazy" />
+            <div className="space-y-6 leading-relaxed text-muted-foreground">
+              <p>Greptun was founded by Michal Gabco, a space industry engineer with experience in Product Assurance, Materials &amp; Processes, and AIT. Before starting Greptun, Michal worked at S.A.B. Aerospace, INVENT, and OHB System.</p>
+              <p>His work has covered different stages of space hardware development, from material and process qualification to integration, testing, and Product Assurance for spacecraft and instruments. He has contributed to projects including LISA, HERA, CO2M, Comet Interceptor, and SPARROW, working with project teams on different types of hardware and technical requirements.</p>
+              <p>His experience includes Product Assurance for LISA's mechanical and thermal subsystems, the central structure and sandwich panels of CO2M, and the SPARROW payload, where he also served as deputy Spacecraft Product Assurance Manager.</p>
+              <p>The projects mentioned above are a non-exhaustive selection of his experience in the space industry.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section id="approach" className="border-t border-border py-28">
         <div className="mx-auto max-w-6xl px-6">
