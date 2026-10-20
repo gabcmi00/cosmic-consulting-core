@@ -130,7 +130,6 @@ function Index() {
               <p>His work has covered different stages of space hardware development, from material and process qualification to integration, testing, and Product Assurance for spacecraft and instruments. He has contributed to projects such as LISA, HERA, CO2M, Comet Interceptor, and SPARROW.</p>
               <p>His experience includes Product Assurance for LISA's mechanical and thermal subsystems, the central structure and sandwich panels of CO2M, and the SPARROW payload, where he also served as deputy Spacecraft PA Manager.</p>
               <p>In addition to project-level responsibilities, Michal has experience in company-level REACH compliance and Obsolescence Management, supporting the management of regulatory requirements and the risks associated with the continued availability of materials and components. His broader quality expertise also includes Quality Management Systems in accordance with ISO 9001, complementing his experience with ECSS quality requirements and Product Assurance processes.</p>
-              <p>The projects mentioned above are a non-exhaustive selection of his experience in the space industry.</p>
             </div>
           </div>
         </div>
