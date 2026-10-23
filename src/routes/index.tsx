@@ -112,7 +112,7 @@ function Index() {
               </div>
               <div className="space-y-4 text-muted-foreground">
                 <p>We provide Product Assurance and engineering support to HPS Romania, an ESA/OHB supplier, for the LISA spacecraft radiator panels. Our involvement began in the initial project phases and currently focuses on material and process qualification, technical documentation, and consultancy on manufacturing and testing approaches. We will continue supporting the project through to final hardware delivery.</p>
-                <p>ESA’s Laser Interferometer Space Antenna (LISA) will be the first space-based observatory dedicated to detecting gravitational waves — ripples in spacetime produced by some of the most powerful events in the Universe, including merging black holes.</p>
+                <p>ESA’s Laser Interferometer Space Antenna (LISA) will be the first space-based observatory dedicated to detecting gravitational waves - ripples in spacetime produced by some of the most powerful events in the Universe, including merging black holes.</p>
               </div>
             </div>
           </article>
