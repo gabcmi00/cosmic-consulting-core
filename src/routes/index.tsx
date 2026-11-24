@@ -66,12 +66,12 @@ function Index() {
           GREPTUN
         </span>
         <div className="relative mx-auto w-full max-w-6xl px-6">
-          <p className="whitespace-nowrap font-mono text-[clamp(8px,2.7vw,12px)] uppercase tracking-[0.15em] text-primary sm:text-xs sm:tracking-[0.3em]">// CONSULTING FOR YOUR SPACE MISSION</p>
+          <p className="whitespace-nowrap font-mono text-[clamp(8px,2.7vw,12px)] uppercase tracking-[0.15em] text-primary sm:text-xs sm:tracking-[0.3em]">// SPACE HARDWARE, DONE RIGHT</p>
           <h1 className="mt-6 max-w-3xl text-5xl font-light leading-[1.05] tracking-tight md:text-7xl">
             When the details <span className="text-primary">matter</span>.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-            We provide Product Assurance and engineering support for the space industry - from concept to delivery.
+            We bring product assurance and engineering rigour to space hardware - from concept to delivery.
           </p>
           <a href="#contact" className="mt-10 inline-flex items-center gap-3 rounded-sm bg-primary px-6 py-3 font-medium text-primary-foreground transition hover:opacity-90">
             Start a conversation →
